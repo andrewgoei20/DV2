@@ -1,0 +1,338 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 560,
+  "height": 400,
+  "background": "#fffdf9",
+
+  "data": {
+    "url": "data/ao_era_dumbbell.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "pre_open": "number",
+        "open_era": "number"
+      }
+    }
+  },
+
+  "layer": [
+    {
+      "transform": [
+        {
+          "calculate": "datum.pre_open + datum.open_era",
+          "as": "sort_total"
+        },
+        {
+          "window": [
+            { "op": "rank", "as": "rank" }
+          ],
+          "sort": [
+            { "field": "sort_total", "order": "descending" },
+            { "field": "open_era", "order": "descending" },
+            { "field": "pre_open", "order": "descending" }
+          ]
+        },
+        {
+          "filter": "datum.rank <= 10"
+        },
+        {
+          "calculate": "datum.pre_open == datum.open_era ? datum.pre_open - 0.35 : datum.pre_open",
+          "as": "pre_plot"
+        },
+        {
+          "calculate": "datum.pre_open == datum.open_era ? datum.open_era + 0.35 : datum.open_era",
+          "as": "open_plot"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "stroke": "#d8d1c8",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": {
+            "field": "sort_total",
+            "order": "descending"
+          },
+          "axis": {
+            "title": null,
+            "labelColor": "#1f1d1a",
+            "labelFontSize": 13,
+            "labelPadding": 18,
+            "labelLimit": 260,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "x": {
+          "field": "pre_plot",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 60]
+          },
+          "axis": {
+            "title": "Singles titles",
+            "titleColor": "#6f6a63",
+            "labelColor": "#6f6a63",
+            "grid": true,
+            "gridColor": "#ddd5c9",
+            "gridOpacity": 1,
+            "tickColor": "#ddd5c9",
+            "domain": false,
+            "values": [0, 10, 20, 30, 40, 50, 60]
+          }
+        },
+        "x2": {
+          "field": "open_plot"
+        }
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "calculate": "datum.pre_open + datum.open_era",
+          "as": "sort_total"
+        },
+        {
+          "window": [
+            { "op": "rank", "as": "rank" }
+          ],
+          "sort": [
+            { "field": "sort_total", "order": "descending" },
+            { "field": "open_era", "order": "descending" },
+            { "field": "pre_open", "order": "descending" }
+          ]
+        },
+        {
+          "filter": "datum.rank <= 10"
+        },
+        {
+          "calculate": "datum.pre_open == datum.open_era ? datum.pre_open - 0.35 : datum.pre_open",
+          "as": "pre_plot"
+        },
+        {
+          "calculate": "datum.pre_open == datum.open_era ? datum.open_era + 0.35 : datum.open_era",
+          "as": "open_plot"
+        },
+        {
+          "fold": ["pre_open", "open_era"],
+          "as": ["era", "titles"]
+        },
+        {
+          "calculate": "datum.era === 'pre_open' ? 'Pre-Open era' : 'Open era'",
+          "as": "era_label"
+        },
+        {
+          "calculate": "datum.era === 'pre_open' ? datum.pre_plot : datum.open_plot",
+          "as": "plot_value"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 260,
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": {
+            "field": "sort_total",
+            "order": "descending"
+          },
+          "axis": {
+            "title": null,
+            "labelColor": "#1f1d1a",
+            "labelFontSize": 13,
+            "labelPadding": 18,
+            "labelLimit": 260,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "x": {
+          "field": "plot_value",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "era_label",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Pre-Open era", "Open era"],
+            "range": ["#d5eceb", "#5c9f95"]
+          },
+          "legend": {
+            "title": "Era",
+            "orient": "none",
+            "legendX": 456,
+            "legendY": 75,
+            "labelColor": "#1f1d1a",
+            "titleColor": "#1f1d1a",
+            "labelFontSize": 12,
+            "titleFontSize": 13,
+            "symbolSize": 180
+            }
+        },
+        "stroke": {
+          "field": "era_label",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Pre-Open era", "Open era"],
+            "range": ["#9fc3c3", "#0f5c4d"]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          { "field": "country", "type": "nominal", "title": "Country" },
+          { "field": "pre_open", "type": "quantitative", "title": "Pre-Open era" },
+          { "field": "open_era", "type": "quantitative", "title": "Open era" },
+          { "field": "sort_total", "type": "quantitative", "title": "Total titles" }
+        ]
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "calculate": "datum.pre_open + datum.open_era",
+          "as": "sort_total"
+        },
+        {
+          "window": [
+            { "op": "rank", "as": "rank" }
+          ],
+          "sort": [
+            { "field": "sort_total", "order": "descending" },
+            { "field": "open_era", "order": "descending" },
+            { "field": "pre_open", "order": "descending" }
+          ]
+        },
+        {
+          "filter": "datum.rank <= 10"
+        },
+        {
+          "calculate": "datum.pre_open == datum.open_era ? datum.pre_open - 0.35 : datum.pre_open",
+          "as": "pre_plot"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 10,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#7a8e8e"
+      },
+      "encoding": {
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": {
+            "field": "sort_total",
+            "order": "descending"
+          },
+          "axis": {
+            "title": null,
+            "labelColor": "#1f1d1a",
+            "labelFontSize": 13,
+            "labelPadding": 18,
+            "labelLimit": 260,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "x": {
+          "field": "pre_plot",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "pre_open",
+          "type": "quantitative"
+        }
+      }
+    },
+
+    {
+      "transform": [
+        {
+          "calculate": "datum.pre_open + datum.open_era",
+          "as": "sort_total"
+        },
+        {
+          "window": [
+            { "op": "rank", "as": "rank" }
+          ],
+          "sort": [
+            { "field": "sort_total", "order": "descending" },
+            { "field": "open_era", "order": "descending" },
+            { "field": "pre_open", "order": "descending" }
+          ]
+        },
+        {
+          "filter": "datum.rank <= 10"
+        },
+        {
+          "calculate": "datum.pre_open == datum.open_era ? datum.open_era + 0.35 : datum.open_era",
+          "as": "open_plot"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 10,
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "#0f5c4d"
+      },
+      "encoding": {
+        "y": {
+          "field": "country",
+          "type": "nominal",
+          "sort": {
+            "field": "sort_total",
+            "order": "descending"
+          },
+          "axis": {
+            "title": null,
+            "labelColor": "#1f1d1a",
+            "labelFontSize": 13,
+            "labelPadding": 18,
+            "labelLimit": 260,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "x": {
+          "field": "open_plot",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "open_era",
+          "type": "quantitative"
+        }
+      }
+    }
+  ],
+
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter",
+      "titleFont": "Inter"
+    },
+    "legend": {
+      "labelFont": "Inter",
+      "titleFont": "Inter"
+    }
+  }
+}

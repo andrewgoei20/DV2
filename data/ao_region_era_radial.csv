@@ -1,0 +1,17 @@
+era,era_order,region,titles,region_order
+Pre-Open,1,Oceania,57,1
+Pre-Open,1,Americas,9,2
+Pre-Open,1,Europe,4,3
+Pre-Open,1,Asia,0,4
+1970s-1980s,2,Oceania,10,1
+1970s-1980s,2,Americas,15,2
+1970s-1980s,2,Europe,8,3
+1970s-1980s,2,Asia,0,4
+1990s-2000s,3,Oceania,3,1
+1990s-2000s,3,Americas,16,2
+1990s-2000s,3,Europe,9,3
+1990s-2000s,3,Asia,2,4
+2010s-2026,4,Oceania,3,1
+2010s-2026,4,Americas,5,2
+2010s-2026,4,Europe,17,3
+2010s-2026,4,Asia,1,4

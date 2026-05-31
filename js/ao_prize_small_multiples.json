@@ -1,0 +1,154 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#fffdf9",
+  "config": {
+    "view": { "stroke": null },
+    "axis": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#6f6a63",
+      "titleColor": "#6f6a63"
+    }
+  },
+  "vconcat": [
+    {
+      "hconcat": [
+        {
+          "title": {
+            "text": "Total pool",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "color": "#1f1d1a"
+          },
+          "width": 220,
+          "height": 170,
+          "data": { "url": "data/ao_prize_money.csv", "format": { "type": "csv", "parse": { "year": "number", "amount": "number" } } },
+          "transform": [{ "filter": "datum.metric == 'total_pool'" }],
+          "layer": [
+            {
+              "mark": { "type": "line", "stroke": "#0f5c4d", "strokeWidth": 2.5 },
+              "encoding": {
+                "x": { "field": "year", "type": "quantitative", "axis": { "title": null, "tickCount": 6, "grid": false } },
+                "y": { "field": "amount", "type": "quantitative", "axis": { "title": null, "format": "~s", "gridColor": "#e7dfd4" }, "scale": { "zero": false } }
+              }
+            },
+            {
+              "mark": { "type": "point", "filled": true, "size": 45, "color": "#0f5c4d", "stroke": "#fffdf9", "strokeWidth": 1.2 },
+              "encoding": {
+                "x": { "field": "year", "type": "quantitative" },
+                "y": { "field": "amount", "type": "quantitative" },
+                "tooltip": [
+                  { "field": "year", "type": "quantitative", "title": "Year" },
+                  { "field": "label", "type": "nominal", "title": "Prize money" }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "text": "Winner prize",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "color": "#1f1d1a"
+          },
+          "width": 220,
+          "height": 170,
+          "data": { "url": "data/ao_prize_money.csv", "format": { "type": "csv", "parse": { "year": "number", "amount": "number" } } },
+          "transform": [{ "filter": "datum.metric == 'winner_prize'" }],
+          "layer": [
+            {
+              "mark": { "type": "line", "stroke": "#0f5c4d", "strokeWidth": 2.5 },
+              "encoding": {
+                "x": { "field": "year", "type": "quantitative", "axis": { "title": null, "tickCount": 6, "grid": false } },
+                "y": { "field": "amount", "type": "quantitative", "axis": { "title": null, "format": "~s", "gridColor": "#e7dfd4" }, "scale": { "zero": false } }
+              }
+            },
+            {
+              "mark": { "type": "point", "filled": true, "size": 45, "color": "#0f5c4d", "stroke": "#fffdf9", "strokeWidth": 1.2 },
+              "encoding": {
+                "x": { "field": "year", "type": "quantitative" },
+                "y": { "field": "amount", "type": "quantitative" },
+                "tooltip": [
+                  { "field": "year", "type": "quantitative", "title": "Year" },
+                  { "field": "label", "type": "nominal", "title": "Prize money" }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "spacing": 16
+    },
+    {
+      "hconcat": [
+        {
+          "title": {
+            "text": "Runner-up prize",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "color": "#1f1d1a"
+          },
+          "width": 220,
+          "height": 170,
+          "data": { "url": "data/ao_prize_money.csv", "format": { "type": "csv", "parse": { "year": "number", "amount": "number" } } },
+          "transform": [{ "filter": "datum.metric == 'runner_up_prize'" }],
+          "layer": [
+            {
+              "mark": { "type": "line", "stroke": "#0f5c4d", "strokeWidth": 2.5 },
+              "encoding": {
+                "x": { "field": "year", "type": "quantitative", "axis": { "title": null, "tickCount": 6, "grid": false } },
+                "y": { "field": "amount", "type": "quantitative", "axis": { "title": null, "format": "~s", "gridColor": "#e7dfd4" }, "scale": { "zero": false } }
+              }
+            },
+            {
+              "mark": { "type": "point", "filled": true, "size": 45, "color": "#0f5c4d", "stroke": "#fffdf9", "strokeWidth": 1.2 },
+              "encoding": {
+                "x": { "field": "year", "type": "quantitative" },
+                "y": { "field": "amount", "type": "quantitative" },
+                "tooltip": [
+                  { "field": "year", "type": "quantitative", "title": "Year" },
+                  { "field": "label", "type": "nominal", "title": "Prize money" }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "text": "Round 1 prize",
+            "fontSize": 12,
+            "fontWeight": "bold",
+            "color": "#1f1d1a"
+          },
+          "width": 220,
+          "height": 170,
+          "data": { "url": "data/ao_prize_money.csv", "format": { "type": "csv", "parse": { "year": "number", "amount": "number" } } },
+          "transform": [{ "filter": "datum.metric == 'round1_prize'" }],
+          "layer": [
+            {
+              "mark": { "type": "line", "stroke": "#0f5c4d", "strokeWidth": 2.5 },
+              "encoding": {
+                "x": { "field": "year", "type": "quantitative", "axis": { "title": null, "tickCount": 6, "grid": false } },
+                "y": { "field": "amount", "type": "quantitative", "axis": { "title": null, "format": "~s", "gridColor": "#e7dfd4" }, "scale": { "zero": false } }
+              }
+            },
+            {
+              "mark": { "type": "point", "filled": true, "size": 45, "color": "#0f5c4d", "stroke": "#fffdf9", "strokeWidth": 1.2 },
+              "encoding": {
+                "x": { "field": "year", "type": "quantitative" },
+                "y": { "field": "amount", "type": "quantitative" },
+                "tooltip": [
+                  { "field": "year", "type": "quantitative", "title": "Year" },
+                  { "field": "label", "type": "nominal", "title": "Prize money" }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "spacing": 16
+    }
+  ],
+  "spacing": 16
+}

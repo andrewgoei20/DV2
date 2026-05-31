@@ -1,0 +1,254 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 550,
+  "height": 450,
+  "background": "#fffdf9",
+  "padding": { "left": 40, "right": 15, "top": 0, "bottom": 10 },
+
+  "data": {
+    "url": "data/ao_country_rank_period.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "titles": "number",
+        "rank": "number"
+      }
+    }
+  },
+
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "ordinal",
+          "sort": ["Pre-Open", "1970s-1980s", "1990s-2000s", "2010s-2026"],
+          "axis": {
+            "title": null,
+            "labelPadding": -34,
+            "labelAngle": 0,
+            "labelFontSize": 11,
+            "labelColor": "#1f1d1a",
+            "domain": false,
+            "ticks": false
+          }
+        },
+        "y": {
+          "field": "rank",
+          "type": "quantitative",
+          "scale": { "domain": [8.5, 0.5] },
+          "axis": {
+            "title": "Rank",
+            "titleFontSize": 12,
+            "titleColor": "#6f6a63",
+            "labelFontSize": 11,
+            "labelColor": "#1f1d1a",
+            "values": [1, 2, 3, 4, 5, 6, 7, 8],
+            "grid": true,
+            "gridColor": "#e7dfd4",
+            "domain": false,
+            "labelPadding": 20,
+            "titlePadding": 11
+          }
+        },
+        "color": {
+          "field": "country",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "Australia",
+              "United States",
+              "Great Britain",
+              "France",
+              "Switzerland",
+              "Serbia",
+              "Czech Republic",
+              "China"
+            ],
+            "range": [
+              "#0f5c4d",
+              "#2f7d71",
+              "#5a9a8d",
+              "#87b8ae",
+              "#a84c3d",
+              "#c97853",
+              "#6f6a63",
+              "#b7aea1"
+            ]
+          }
+        },
+        "detail": { "field": "country" },
+        "tooltip": [
+          { "field": "country", "type": "nominal", "title": "Country" },
+          { "field": "period", "type": "nominal", "title": "Period" },
+          { "field": "titles", "type": "quantitative", "title": "Titles" },
+          { "field": "rank", "type": "quantitative", "title": "Rank" }
+        ]
+      }
+    },
+
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "baseline": "middle",
+        "align": "right",
+        "dx": -20
+      },
+      "encoding": {
+        "x": {
+          "field": "period",
+          "type": "ordinal",
+          "sort": ["Pre-Open", "1970s-1980s", "1990s-2000s", "2010s-2026"]
+        },
+        "y": { "field": "rank", "type": "quantitative" },
+        "color": {
+          "field": "country",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": [
+              "Australia",
+              "United States",
+              "Great Britain",
+              "France",
+              "Switzerland",
+              "Serbia",
+              "Czech Republic",
+              "China"
+            ],
+            "range": [
+              "#0f5c4d",
+              "#2f7d71",
+              "#5a9a8d",
+              "#87b8ae",
+              "#a84c3d",
+              "#c97853",
+              "#6f6a63",
+              "#b7aea1"
+            ]
+          }
+        },
+        "tooltip": [
+          { "field": "country", "type": "nominal", "title": "Country" },
+          { "field": "period", "type": "nominal", "title": "Period" },
+          { "field": "titles", "type": "quantitative", "title": "Titles" },
+          { "field": "rank", "type": "quantitative", "title": "Rank" }
+        ]
+      }
+    },
+
+    {
+  "transform": [
+    { "filter": "datum.period == 'Pre-Open'" }
+  ],
+  "mark": {
+    "type": "text",
+    "fontSize": 11,
+    "fontWeight": "bold",
+    "baseline": "middle",
+    "align": "left",
+    "dx": -85
+  },
+  "encoding": {
+    "x": {
+      "field": "period",
+      "type": "ordinal",
+      "sort": ["Pre-Open", "1970s-1980s", "1990s-2000s", "2010s-2026"]
+    },
+    "y": { "field": "rank", "type": "quantitative" },
+    "text": { "field": "country" },
+    "color": {
+      "field": "country",
+      "type": "nominal",
+      "legend": null,
+      "scale": {
+        "domain": [
+          "Australia",
+          "United States",
+          "Great Britain",
+          "France",
+          "Switzerland",
+          "Serbia",
+          "Czech Republic",
+          "China"
+        ],
+        "range": [
+          "#0f5c4d",
+          "#2f7d71",
+          "#5a9a8d",
+          "#87b8ae",
+          "#a84c3d",
+          "#c97853",
+          "#6f6a63",
+          "#b7aea1"
+        ]
+      }
+    }
+  }
+},
+{
+  "transform": [
+    { "filter": "datum.period == '2010s-2026'" }
+  ],
+  "mark": {
+    "type": "text",
+    "fontSize": 11,
+    "fontWeight": "bold",
+    "baseline": "middle",
+    "align": "left",
+    "dx": 10
+  },
+  "encoding": {
+    "x": {
+      "field": "period",
+      "type": "ordinal",
+      "sort": ["Pre-Open", "1970s-1980s", "1990s-2000s", "2010s-2026"]
+    },
+    "y": { "field": "rank", "type": "quantitative" },
+    "text": { "field": "country" },
+    "color": {
+      "field": "country",
+      "type": "nominal",
+      "legend": null,
+      "scale": {
+        "domain": [
+          "Australia",
+          "United States",
+          "Great Britain",
+          "France",
+          "Switzerland",
+          "Serbia",
+          "Czech Republic",
+          "China"
+        ],
+        "range": [
+          "#0f5c4d",
+          "#2f7d71",
+          "#5a9a8d",
+          "#87b8ae",
+          "#a84c3d",
+          "#c97853",
+          "#6f6a63",
+          "#b7aea1"
+        ]
+      }
+    }
+  }
+}
+  ],
+
+  "config": {
+    "view": { "stroke": null },
+    "axis": {
+      "labelFont": "Inter",
+      "titleFont": "Inter"
+    }
+  }
+}

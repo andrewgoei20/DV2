@@ -1,0 +1,275 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 460,
+  "height": 320,
+  "background": "#fffdf9",
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {"start": 2010, "end": 2020, "label": "Steady growth", "color": "#dff1eb"},
+          {"start": 2021, "end": 2022, "label": "Pandemic disruption", "color": "#f7e2cf"},
+          {"start": 2023, "end": 2026, "label": "Recovery", "color": "#d9efe4"}
+        ]
+      },
+      "mark": {
+        "type": "rect",
+        "opacity": 0.22
+      },
+      "encoding": {
+        "x": {
+          "field": "start",
+          "type": "quantitative",
+          "scale": {"domain": [2010, 2026]}
+        },
+        "x2": {"field": "end"},
+        "y": {"datum": 0},
+        "y2": {"datum": 1400000},
+        "color": {
+          "field": "color",
+          "type": "nominal",
+          "scale": null,
+          "legend": null
+        }
+      }
+    },
+
+    {
+      "data": {
+        "values": [
+          {"x": 2015.5, "y": 1330000, "text": "Steady growth"},
+          {"x": 2021.4, "y": 1300000, "text": "Pandemic\ndisruption"},
+          {"x": 2024.5, "y": 1260000, "text": "Recovery"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 10.5,
+        "fontWeight": "bold",
+        "color": "#5d5a55",
+        "align": "center",
+        "baseline": "middle",
+        "lineBreak": "\n"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {"domain": [2010, 2026]}
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {"domain": [0, 1400000]}
+        },
+        "text": {"field": "text"}
+      }
+    },
+
+    {
+      "data": {
+        "url": "../data/ao_attendance.csv"
+      },
+      "mark": {
+        "type": "area",
+        "color": "#9fd3c7",
+        "opacity": 0.82
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "title": null,
+          "scale": {"domain": [2010, 2026]},
+          "axis": {
+            "values": [2010, 2012, 2014, 2016, 2018, 2020, 2022, 2024, 2026],
+            "labelAngle": 0,
+            "labelFontSize": 11,
+            "tickSize": 0,
+            "domain": false
+          }
+        },
+        "y": {
+          "field": "attendance",
+          "type": "quantitative",
+          "title": "Attendance",
+          "scale": {"domain": [0, 1400000]},
+          "axis": {
+            "values": [0, 400000, 800000, 1200000],
+            "labelExpr": "datum.value == 0 ? '0' : datum.value >= 1000000 ? format(datum.value/1000000, '.1f') + 'M' : format(datum.value/1000, '.0f') + 'K'",
+            "labelFontSize": 11,
+            "titleFontSize": 12,
+            "gridColor": "#e8e2d8",
+            "domain": false
+          }
+        },
+        "tooltip": [
+          {"field": "year", "type": "quantitative", "title": "Year"},
+          {"field": "attendance", "type": "quantitative", "title": "Attendance", "format": ","}
+        ]
+      }
+    },
+
+    {
+      "data": {
+        "url": "../data/ao_attendance.csv"
+      },
+      "mark": {
+        "type": "line",
+        "color": "#0f5c4d",
+        "strokeWidth": 4
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": {"domain": [2010, 2026]}
+        },
+        "y": {
+          "field": "attendance",
+          "type": "quantitative",
+          "scale": {"domain": [0, 1400000]}
+        }
+      }
+    },
+
+    {
+      "data": {
+        "url": "../data/ao_attendance.csv"
+      },
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 78,
+        "color": "#ffffff",
+        "stroke": "#0f5c4d",
+        "strokeWidth": 2.5
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": {"domain": [2010, 2026]}
+        },
+        "y": {
+          "field": "attendance",
+          "type": "quantitative",
+          "scale": {"domain": [0, 1400000]}
+        }
+      }
+    },
+
+    {
+      "data": {
+        "values": [
+          {"benchmark": 1000000}
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeDash": [6, 6],
+        "strokeWidth": 1.8,
+        "color": "#557c72"
+      },
+      "encoding": {
+        "y": {
+          "field": "benchmark",
+          "type": "quantitative",
+          "scale": {"domain": [0, 1400000]}
+        }
+      }
+    },
+
+    {
+      "data": {
+        "values": [
+          {"x": 2010.6, "y": 1000000, "text": "1.0M benchmark"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 4,
+        "dy": -8,
+        "fontSize": 10.5,
+        "color": "#557c72"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {"domain": [2010, 2026]}
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {"domain": [0, 1400000]}
+        },
+        "text": {"field": "text"}
+      }
+    },
+
+    {
+      "data": {
+        "values": [
+          {"x": 2022.35, "y": 300000, "text": "Pandemic-affected\nlow point"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 10.5,
+        "fontWeight": "bold",
+        "color": "#8a5b2d",
+        "lineBreak": "\n"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {"domain": [2010, 2026]}
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {"domain": [0, 1400000]}
+        },
+        "text": {"field": "text"}
+      }
+    },
+
+    {
+      "data": {
+        "values": [
+          {"x": 2024.9, "y": 1315000, "text": "Record total"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 10.5,
+        "fontWeight": "bold",
+        "color": "#0f5c4d",
+        "lineBreak": "\n"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": {"domain": [2010, 2026]}
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": {"domain": [0, 1400000]}
+        },
+        "text": {"field": "text"}
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

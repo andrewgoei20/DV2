@@ -1,0 +1,137 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 520,
+  "height": 420,
+  "background": "#fffdf9",
+
+  "data": {
+    "url": "data/champ_by_decade.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "titles": "number"
+      }
+    }
+  },
+
+  "encoding": {
+    "x": {
+      "field": "period",
+      "type": "ordinal",
+      "sort": [
+        "1900–1919",
+        "1920–1939",
+        "1940–1959",
+        "1960–1979",
+        "1980–1999",
+        "2000–2019",
+        "2020–2026"
+      ],
+      "axis": {
+        "title": null,
+        "labelAngle": 0,
+        "labelColor": "#1f1d1a",
+        "labelFontSize": 11,
+        "labelPadding": 8,
+        "ticks": false,
+        "domain": false
+      }
+    },
+    "y": {
+      "field": "country",
+      "type": "ordinal",
+      "sort": [
+        "Australia",
+        "United States",
+        "Serbia",
+        "Switzerland",
+        "Sweden",
+        "Germany",
+        "Czech Republic",
+        "Belarus",
+        "Great Britain",
+        "Italy"
+      ],
+      "axis": {
+        "title": null,
+        "labelColor": "#1f1d1a",
+        "labelFontSize": 12,
+        "labelPadding": 10,
+        "ticks": false,
+        "domain": false
+      }
+    }
+  },
+
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "cornerRadius": 2,
+        "stroke": "#f6f3ee",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "color": {
+          "field": "titles",
+          "type": "quantitative",
+          "scale": {
+            "domain": [0, 20],
+            "range": ["#f2ede5", "#d7ebe7", "#89bbb2", "#0f6f67"]
+          },
+          "legend": {
+            "title": "Titles won",
+            "orient": "bottom",
+            "gradientLength": 180,
+            "labelColor": "#1f1d1a",
+            "titleColor": "#1f1d1a"
+          }
+        },
+        "tooltip": [
+          { "field": "country", "type": "nominal", "title": "Country" },
+          { "field": "period", "type": "nominal", "title": "Period" },
+          { "field": "titles", "type": "quantitative", "title": "Titles" }
+        ]
+      }
+    },
+    {
+      "transform": [
+        { "filter": "datum.titles > 0" }
+      ],
+      "mark": {
+        "type": "text",
+        "baseline": "middle",
+        "align": "center",
+        "fontSize": 11,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "text": {
+          "field": "titles",
+          "type": "quantitative"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.titles >= 8",
+            "value": "#fffdf9"
+          },
+          "value": "#1f1d1a"
+        }
+      }
+    }
+  ],
+
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "Inter",
+      "titleFont": "Inter"
+    },
+    "legend": {
+      "labelFont": "Inter",
+      "titleFont": "Inter"
+    }
+  }
+}

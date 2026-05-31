@@ -1,0 +1,201 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#fffdf9",
+  "config": {
+    "view": { "stroke": null },
+    "legend": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "labelColor": "#1f1d1a",
+      "titleColor": "#1f1d1a"
+    }
+  },
+  "vconcat": [
+    {
+      "hconcat": [
+        {
+          "title": {
+            "text": "Pre-Open",
+            "subtitle": "99% won by top 3 — Australia, USA, Great Britain",
+            "fontSize": 13,
+            "fontWeight": "bold",
+            "color": "#1f1d1a",
+            "subtitleColor": "#0f5c4d",
+            "subtitleFontSize": 12,
+            "subtitleFontWeight": "bold"
+          },
+          "width": 225,
+          "height": 200,
+          "data": {
+            "url": "data/ao_top3_waffle.csv",
+            "format": {
+              "type": "csv",
+              "parse": { "era_order": "number", "square": "number", "row": "number", "col": "number", "is_top3": "number", "top3_pct": "number" }
+            }
+          },
+          "transform": [
+            { "filter": "datum.era === 'Pre-Open'" },
+            { "calculate": "datum.is_top3 == 1 ? 'Top 3 countries' : 'Other countries'", "as": "group_label" }
+          ],
+          "mark": { "type": "square", "size": 195, "stroke": "#fffdf9", "strokeWidth": 1 },
+          "encoding": {
+            "x": { "field": "col", "type": "ordinal", "axis": null },
+            "y": { "field": "row", "type": "ordinal", "sort": "descending", "axis": null },
+            "color": {
+              "field": "group_label",
+              "type": "nominal",
+              "scale": { "domain": ["Top 3 countries", "Other countries"], "range": ["#0f5c4d", "#dfe8e3"] },
+              "legend": {
+                "title": null,
+                "orient": "bottom",
+                "direction": "horizontal",
+                "symbolType": "square",
+                "symbolSize": 140,
+                "labelFontSize": 11
+              }
+            },
+            "tooltip": [
+              { "field": "era", "type": "nominal", "title": "Era" },
+              { "field": "group_label", "type": "nominal", "title": "Group" },
+              { "field": "top3_label", "type": "nominal", "title": "Top 3 countries" },
+              { "field": "top3_pct", "type": "quantitative", "title": "Top 3 share (%)", "format": ".0f" }
+            ]
+          }
+        },
+        {
+          "title": {
+            "text": "1970s–1980s",
+            "subtitle": "68% won by top 3 — USA, Australia, Czech",
+            "fontSize": 13,
+            "fontWeight": "bold",
+            "color": "#1f1d1a",
+            "subtitleColor": "#0f5c4d",
+            "subtitleFontSize": 12,
+            "subtitleFontWeight": "bold"
+          },
+          "width": 225,
+          "height": 200,
+          "data": {
+            "url": "data/ao_top3_waffle.csv",
+            "format": {
+              "type": "csv",
+              "parse": { "era_order": "number", "square": "number", "row": "number", "col": "number", "is_top3": "number", "top3_pct": "number" }
+            }
+          },
+          "transform": [
+            { "filter": "datum.era === '1970s–1980s'" },
+            { "calculate": "datum.is_top3 == 1 ? 'Top 3 countries' : 'Other countries'", "as": "group_label" }
+          ],
+          "mark": { "type": "square", "size": 195, "stroke": "#fffdf9", "strokeWidth": 1 },
+          "encoding": {
+            "x": { "field": "col", "type": "ordinal", "axis": null },
+            "y": { "field": "row", "type": "ordinal", "sort": "descending", "axis": null },
+            "color": {
+              "field": "group_label",
+              "type": "nominal",
+              "scale": { "domain": ["Top 3 countries", "Other countries"], "range": ["#0f5c4d", "#dfe8e3"] },
+              "legend": null
+            },
+            "tooltip": [
+              { "field": "era", "type": "nominal", "title": "Era" },
+              { "field": "group_label", "type": "nominal", "title": "Group" },
+              { "field": "top3_label", "type": "nominal", "title": "Top 3 countries" },
+              { "field": "top3_pct", "type": "quantitative", "title": "Top 3 share (%)", "format": ".0f" }
+            ]
+          }
+        }
+      ],
+      "spacing": 24
+    },
+    {
+      "hconcat": [
+        {
+          "title": {
+            "text": "1990s–2000s",
+            "subtitle": "77% won by top 3 — USA, Switzerland, Australia",
+            "fontSize": 13,
+            "fontWeight": "bold",
+            "color": "#1f1d1a",
+            "subtitleColor": "#0f5c4d",
+            "subtitleFontSize": 12,
+            "subtitleFontWeight": "bold"
+          },
+          "width": 225,
+          "height": 200,
+          "data": {
+            "url": "data/ao_top3_waffle.csv",
+            "format": {
+              "type": "csv",
+              "parse": { "era_order": "number", "square": "number", "row": "number", "col": "number", "is_top3": "number", "top3_pct": "number" }
+            }
+          },
+          "transform": [
+            { "filter": "datum.era === '1990s–2000s'" },
+            { "calculate": "datum.is_top3 == 1 ? 'Top 3 countries' : 'Other countries'", "as": "group_label" }
+          ],
+          "mark": { "type": "square", "size": 195, "stroke": "#fffdf9", "strokeWidth": 1 },
+          "encoding": {
+            "x": { "field": "col", "type": "ordinal", "axis": null },
+            "y": { "field": "row", "type": "ordinal", "sort": "descending", "axis": null },
+            "color": {
+              "field": "group_label",
+              "type": "nominal",
+              "scale": { "domain": ["Top 3 countries", "Other countries"], "range": ["#0f5c4d", "#dfe8e3"] },
+              "legend": null
+            },
+            "tooltip": [
+              { "field": "era", "type": "nominal", "title": "Era" },
+              { "field": "group_label", "type": "nominal", "title": "Group" },
+              { "field": "top3_label", "type": "nominal", "title": "Top 3 countries" },
+              { "field": "top3_pct", "type": "quantitative", "title": "Top 3 share (%)", "format": ".0f" }
+            ]
+          }
+        },
+        {
+          "title": {
+            "text": "2010s–2026",
+            "subtitle": "56% won by top 3 — Serbia, Switzerland, USA",
+            "fontSize": 13,
+            "fontWeight": "bold",
+            "color": "#1f1d1a",
+            "subtitleColor": "#0f5c4d",
+            "subtitleFontSize": 12,
+            "subtitleFontWeight": "bold"
+          },
+          "width": 225,
+          "height": 200,
+          "data": {
+            "url": "data/ao_top3_waffle.csv",
+            "format": {
+              "type": "csv",
+              "parse": { "era_order": "number", "square": "number", "row": "number", "col": "number", "is_top3": "number", "top3_pct": "number" }
+            }
+          },
+          "transform": [
+            { "filter": "datum.era === '2010s–2026'" },
+            { "calculate": "datum.is_top3 == 1 ? 'Top 3 countries' : 'Other countries'", "as": "group_label" }
+          ],
+          "mark": { "type": "square", "size": 195, "stroke": "#fffdf9", "strokeWidth": 1 },
+          "encoding": {
+            "x": { "field": "col", "type": "ordinal", "axis": null },
+            "y": { "field": "row", "type": "ordinal", "sort": "descending", "axis": null },
+            "color": {
+              "field": "group_label",
+              "type": "nominal",
+              "scale": { "domain": ["Top 3 countries", "Other countries"], "range": ["#0f5c4d", "#dfe8e3"] },
+              "legend": null
+            },
+            "tooltip": [
+              { "field": "era", "type": "nominal", "title": "Era" },
+              { "field": "group_label", "type": "nominal", "title": "Group" },
+              { "field": "top3_label", "type": "nominal", "title": "Top 3 countries" },
+              { "field": "top3_pct", "type": "quantitative", "title": "Top 3 share (%)", "format": ".0f" }
+            ]
+          }
+        }
+      ],
+      "spacing": 24
+    }
+  ],
+  "spacing": 24
+}

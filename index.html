@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How the Australian Open Became a Global Sporting Event</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+    <main class="page">
+        <section class="hero">
+            <h1>How has the Australian Open grown into a global sporting event?</h1>
+            <p>
+                Held in Melbourne, the Australian Open has grown from a historic national championship
+                into one of the most internationally recognised events in tennis. This visual story
+                explores that growth through attendance, champion geography, and the countries
+                that have shaped the tournament's history.
+            </p>
+
+            <div class="hero-grid">
+                <div class="hero-card">
+                    <strong>DOMAIN</strong>
+                    <div class="hero-main">Australian Open history and global reach</div>
+                    <div class="hero-sub">The story traces how the tournament grew from a national championship into a major international event.</div>
+                </div>
+
+                <div class="hero-card">
+                    <strong>AUDIENCE</strong>
+                    <div class="hero-main">Average Australian viewer</div>
+                    <div class="hero-sub">It is designed for readers who may know the event well but not its longer history, patterns, and global significance.</div>
+                </div>
+
+                <div class="hero-card">
+                    <strong>STORY FOCUS</strong>
+                    <div class="hero-main">Growth, international champions, and global identity</div>
+                    <div class="hero-sub">The visualisations show how attendance, participation, prize money, and title-winning countries became more global over time.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section story-panel">
+            <div class="story-layout">
+                <div class="story-copy">
+                    <div class="feature-kicker">Story context</div>
+                    <h2>How the Australian Open became a global event</h2>
+
+                    <p>
+                        The Australian Open began as the Australian Championships in 1905 and gradually
+                        evolved into a much larger international event. Major turning points included the
+                        beginning of the Open era in 1969 and the move to Melbourne Park in 1988.
+                    </p>
+
+                    <p>
+                        These milestones show how the event grew from a national championship into one of
+                        tennis’s most prestigious and best-attended tournaments.
+                    </p>
+
+                    <div class="story-notes">
+                        <div class="story-note">
+                            <strong>1905</strong>
+                            <span>Australian Championships begins</span>
+                        </div>
+                        <div class="story-note">
+                            <strong>1969</strong>
+                            <span>Open era begins — amateurs and professionals compete together</span>
+                        </div>
+                        <div class="story-note">
+                            <strong>1988</strong>
+                            <span>Move to Melbourne Park</span>
+                        </div>
+                        <div class="story-note">
+                            <strong>2026</strong>
+                            <span>Record crowds reinforce global status</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-chart">
+                    <h3>Key milestones in the Australian Open’s growth</h3>
+                    <div class="sub">From historic beginnings to record crowds</div>
+                    <div id="timeline_chart" class="viz"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section section">
+            <div class="story-layout">
+                <div class="story-copy attendance-copy">
+                    <span class="story-kicker">Attendance story</span>
+
+                    <h2>Attendance reflects the tournament’s rising scale</h2>
+
+                    <p>
+                        One of the clearest signs of the Australian Open’s growth is the size of its crowds.
+                        Attendance rose steadily across the 2010s, was heavily disrupted during the pandemic
+                        period, and then rebounded sharply in the years that followed.
+                    </p>
+
+                    <p>
+                        By 2026, the tournament had reached record total attendance, showing that the
+                        Australian Open is now operating on a much larger scale than before.
+                    </p>
+
+                    <div class="key-points">
+                        <div class="key-point-row">
+                            <span class="year">2010–2020</span>
+                            <span class="point">Steady long-term growth</span>
+                        </div>
+                        <div class="key-point-row">
+                            <span class="year">2022</span>
+                            <span class="point">Pandemic-affected low point</span>
+                        </div>
+                        <div class="key-point-row">
+                            <span class="year">2026</span>
+                            <span class="point">Record total attendance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-viz attendance-viz">
+                    <h3>Attendance has surged in recent years</h3>
+                    <p class="story-chart-sub">
+                        From steady growth to disruption, recovery, and record crowds
+                    </p>
+                    <div id="attendance_chart" class="viz"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section section">
+            <div class="story-layout">
+                <div class="story-copy map-copy">
+                    <span class="story-kicker">Champion geography</span>
+
+                    <h2>Champion success comes from many parts of the world</h2>
+
+                    <p>
+                        Although the Australian Open is hosted in Melbourne, its champions do not come from
+                        Australia alone. Over time, singles titles have been won by players from a wide range
+                        of countries, reflecting the tournament’s place in a global tennis network.
+                    </p>
+
+                    <p>
+                        This spread of champion countries helps show that the Australian Open is not only a
+                        national event, but also an international sporting competition with global reach.
+                    </p>
+
+                    <div class="key-points">
+                        <div class="key-point-row">
+                            <span class="year">Australia</span>
+                            <span class="point">Strongest historical title record</span>
+                        </div>
+                        <div class="key-point-row">
+                            <span class="year">United States</span>
+                            <span class="point">Most important long-term rival</span>
+                        </div>
+                        <div class="key-point-row">
+                            <span class="year">Europe</span>
+                            <span class="point">Major source of champion countries</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-viz map-viz">
+                    <h3>Champion countries</h3>
+                    <p class="story-chart-sub">
+                        A global view of the countries that have produced Australian Open singles champions
+                    </p>
+                    <div id="map_chart" class="viz"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section section">
+            <div class="story-layout">
+                <div class="story-copy">
+                    <span class="story-kicker">ERA COMPARISON</span>
+
+                    <h2>How dominance changed across eras</h2>
+
+                    <p>
+                        Before the Open era, Australia held a much larger share of Australian Open singles
+                        titles. In the modern era, success is spread more broadly across countries such as
+                        the United States, Serbia, and Switzerland.
+                    </p>
+
+                    <p>
+                        This shift shows that the tournament moved away from early local dominance and
+                        became a more internationally competitive event over time.
+                    </p>
+
+                    <div class="key-points">
+                        <div class="key-point-row">
+                            <span class="year">Australia</span>
+                            <span class="point">Strongest historical dominance in the pre-Open era</span>
+                        </div>
+                        <div class="key-point-row">
+                            <span class="year">United States</span>
+                            <span class="point">Major force in the Open era</span>
+                        </div>
+                        <div class="key-point-row">
+                            <span class="year">Europe</span>
+                            <span class="point">More visible in the modern era</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-viz era-viz">
+                    <h3>How dominance changed across eras</h3>
+                    <p class="story-chart-sub">
+                        Comparing the balance of champion success before and after the tournament became more global
+                    </p>
+                    <div id="country_bar_chart" class="viz"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section section">
+            <div class="story-layout">
+                <div class="story-copy">
+                    <span class="story-kicker">DECADE PATTERN</span>
+
+                    <h2>Champion countries shifted across decades</h2>
+
+                    <p>
+                        The Australian Open’s early decades were heavily dominated by Australia, especially
+                        before the Open era. Over time, however, title-winning success became more distributed,
+                        with the United States becoming stronger in the late twentieth century and newer
+                        European countries appearing more often in the modern era.
+                    </p>
+
+                    <p>
+                        This decade-by-decade heatmap shows that champion success did not stay concentrated in
+                        one place. Instead, the tournament gradually reflected a broader and more international
+                        competitive field.
+                    </p>
+
+                    <div class="key-points">
+                        <div class="key-point-row">
+                            <span class="year">Australia</span>
+                            <span class="point">Strongest concentration in the early decades</span>
+                        </div>
+                        <div class="key-point-row">
+                            <span class="year">United States</span>
+                            <span class="point">Major force from the 1970s through the 2000s</span>
+                        </div>
+                        <div class="key-point-row">
+                            <span class="year">Modern era</span>
+                            <span class="point">A broader range of countries appears as champions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-viz heatmap-viz">
+                    <h3>Champion countries across decades</h3>
+                    <p class="story-chart-sub">
+                        A heatmap of men's and women's singles titles by country and decade at the Australian Open
+                    </p>
+                    <div id="country_decade_heatmap" class="viz"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section section flow-section">
+            <div class="story-layout">
+                <div class="story-copy">
+                    <span class="story-kicker">PARTICIPATION FLOW</span>
+
+                    <h2>Singles entries flow into Melbourne from around the world</h2>
+
+                    <p>
+                        The Australian Open is staged in Melbourne, but its singles draws are built from a broad international field.
+                        Countries such as the United States, Australia, France, and Italy contribute large numbers of main-draw entries,
+                        while many others are represented by smaller groups of players.
+                    </p>
+
+                    <p>
+                        This flow map shifts the focus from champions to participation, showing how the tournament draws talent from
+                        across multiple regions rather than relying on one dominant national base.
+                    </p>
+
+                    <div class="key-points">
+                        <div class="key-point-row">
+                            <span class="year">United States</span>
+                            <span class="point">Largest combined men’s and women’s singles entry total</span>
+                        </div>
+                        <div class="key-point-row">
+                            <span class="year">Australia</span>
+                            <span class="point">Strong host-country presence in the main draw</span>
+                        </div>
+                        <div class="key-point-row">
+                            <span class="year">Global field</span>
+                            <span class="point">Entries come from a wide spread of countries into Melbourne</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-viz flowmap-viz">
+                    <h3>Global singles entries into Melbourne</h3>
+                    <p class="story-chart-sub">
+                        Men's and women's singles entries by country at the Australian Open 2025. Bubble size and flow thickness both represent total entries.
+                    </p>
+                    <div id="singles_flow_map" class="viz"></div>
+
+                    <div class="flowmap-legend">
+                        <div class="flowmap-legend-title">Singles entries</div>
+
+                        <div class="flowmap-legend-row">
+                            <span class="flow-bubble flow-bubble-sm"></span>
+                            <span>5</span>
+                        </div>
+
+                        <div class="flowmap-legend-row">
+                            <span class="flow-bubble flow-bubble-md"></span>
+                            <span>15</span>
+                        </div>
+
+                        <div class="flowmap-legend-row">
+                            <span class="flow-bubble flow-bubble-lg"></span>
+                            <span>30</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section section">
+            <div class="story-layout">
+                <div class="story-copy">
+                    <span class="story-kicker">RANK SHIFTS</span>
+
+                    <h2>Leading countries changed across different eras</h2>
+
+                    <p>
+                        The Australian Open was once dominated by Australia and a small group of traditional tennis nations.
+                        Over time, however, the ranking of leading title-winning countries shifted as the tournament became
+                        more global and competitive.
+                    </p>
+
+                    <p>
+                        This bump chart highlights how some countries declined from early dominance, while others such as
+                        Serbia and Switzerland rose more strongly in the modern era.
+                    </p>
+
+                    <div class="key-points">
+                        <div class="key-point-row">
+                            <span class="year">Australia</span>
+                            <span class="point">Strongest in the early period, but less dominant in later eras</span>
+                        </div>
+                        <div class="key-point-row">
+                            <span class="year">United States</span>
+                            <span class="point">Maintained a strong position across multiple periods</span>
+                        </div>
+                        <div class="key-point-row">
+                            <span class="year">Modern era</span>
+                            <span class="point">Serbia and Switzerland rise as Europe becomes more prominent</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-viz">
+                    <h3>Country rankings shifted across eras</h3>
+                    <p class="story-chart-sub">
+                        How leading Australian Open title countries rose or fell across major periods
+                    </p>
+                    <div id="bump_chart" class="viz"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section prize-section">
+            <div class="story-layout prize-layout">
+                <div class="story-copy prize-copy">
+                    <span class="story-kicker">PRIZE MONEY</span>
+                    <h2>Prize money growth spread across the whole tournament</h2>
+
+                    <p>
+                        The Australian Open’s growth is not only visible in attendance and
+                        international participation, but also in its financial scale. Prize
+                        money has risen strongly over time, reflecting the tournament’s
+                        development into a larger commercial and global event.
+                    </p>
+
+                    <p>
+                        These small multiples compare overall prize-pool growth with changes
+                        in selected singles payouts, showing that increases were not limited
+                        to champions alone but also extended to players in later and earlier rounds.
+                    </p>
+
+                    <div class="story-notes">
+                        <div class="story-note">
+                            <strong>Total pool</strong>
+                            <span>Expanded from about A$25.0m in 2011 to A$111.5m in 2026</span>
+                        </div>
+                        <div class="story-note">
+                            <strong>Winner prize</strong>
+                            <span>Rose from A$2.2m to A$4.15m over the same period</span>
+                        </div>
+                        <div class="story-note">
+                            <strong>2021 dip</strong>
+                            <span>Some payout categories dipped slightly after 2020 before rising again</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-viz prize-viz">
+                    <h3>Prize money growth spread across the whole tournament</h3>
+                    <p class="story-chart-sub">
+                        Small multiples comparing total pool and selected singles payouts, 2011–2026
+                    </p>
+                    <div id="prize_small_multiples" class="viz"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section section">
+            <div class="story-layout">
+                <div class="story-copy">
+                    <span class="story-kicker">REGIONAL SHIFTS</span>
+
+                    <h2>Champion dominance moved across regions over time</h2>
+
+                    <p>
+                        The Australian Open’s history was not dominated by the same part of the world in every era.
+                        Earlier decades were led heavily by Oceania, while the Americas became stronger in the middle periods
+                        and Europe emerged as the most prominent region in the modern era.
+                    </p>
+
+                    <p>
+                        This radial chart shows how regional contributions to Australian Open singles championships changed across four major eras.
+                        Each quadrant represents one period, while colour shows the relative presence of Oceania, the Americas,
+                        Europe, and Asia in title-winning success.
+                    </p>
+
+                    <div class="key-points">
+                        <div class="key-point-row">
+                            <span class="year">Pre-Open</span>
+                            <span class="point">Oceania was by far the dominant region</span>
+                        </div>
+                        <div class="key-point-row">
+                            <span class="year">1990s–2000s</span>
+                            <span class="point">The Americas remained strong, but Europe expanded</span>
+                        </div>
+                        <div class="key-point-row">
+                            <span class="year">2010s–2026</span>
+                            <span class="point">Europe became the leading source of champions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-viz">
+                    <h3>Regional champion share by era</h3>
+                    <p class="story-chart-sub">
+                        A radial view of how different regions contributed singles champions across major eras
+                    </p>
+                    <div id="radial_region_chart" class="viz"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section section radial-section">
+            <div class="story-layout">
+                <div class="story-copy">
+                    <span class="story-kicker">CONCENTRATION</span>
+
+                    <h2>Champion success became less concentrated over time</h2>
+
+                    <p>
+                        For much of Australian Open history, a small group of countries accounted for most singles titles.
+                        This meant success was highly concentrated rather than broadly shared across the international field.
+                    </p>
+
+                    <p>
+                        These waffle charts show the share of titles won by the top three countries in each era.
+                        Although concentration remained high for much of the tournament’s history, the modern era shows
+                        a somewhat broader distribution of title success.
+                    </p>
+
+                    <div class="key-points">
+                        <div class="key-point-row">
+                            <span class="year">Pre-Open</span>
+                            <span class="point">The top three countries accounted for almost all titles in the early era</span>
+                        </div>
+                        <div class="key-point-row">
+                            <span class="year">1970s–1980s</span>
+                            <span class="point">Concentration remained high, but title success was less tightly grouped than before</span>
+                        </div>
+                        <div class="key-point-row">
+                            <span class="year">2010s–2026</span>
+                            <span class="point">The top three still dominate, but the share is much lower than in earlier eras</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-viz">
+                    <h3>Champion success became less concentrated over time</h3>
+                    <p class="story-chart-sub">
+                        Each waffle shows the share of singles titles won by the top 3 countries in each era
+                    </p>
+                    <div id="waffle_chart" class="viz"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="end-notes">
+            <div class="end-notes-grid">
+                <div class="end-note-card">
+                    <h3>About this work</h3>
+                    <p><strong>Assignment:</strong> FIT3179 Data Visualisation 2</p>
+                    <p><strong>Task:</strong> Visual storytelling webpage</p>
+                    <p><strong>Institution:</strong> Monash University</p>
+                    <p><strong>Author:</strong> Andrew Oei</p>
+                    <p><strong>Last updated:</strong> 18 May 2026</p>
+                </div>
+
+                <div class="end-note-card">
+                    <h3>Data sources</h3>
+                    <p>
+                        Data was compiled from official Australian Open sources, including the Australian Open Honour Roll,
+                        tournament history pages, attendance records, and prize money information.
+                    </p>
+                </div>
+
+                <div class="end-note-card">
+                    <h3>Acknowledgement</h3>
+                    <p>
+                        ChatGPT was used as a support tool for brainstorming, refining wording, troubleshooting code,
+                        and improving implementation details. The final visualisations, narrative structure,
+                        interpretation, and submission decisions remain the author’s own work.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            This page is part of a single-scroll visual narrative about how the Australian Open developed into a global sporting event.
+        </footer>
+    </main>
+
+    <script>
+        vegaEmbed('#timeline_chart', 'js/ao_timeline.json', { actions: false });
+        vegaEmbed('#attendance_chart', 'js/ao_attendance.json', { actions: false });
+        vegaEmbed('#map_chart', 'js/ao_country_map.json', { actions: false });
+        vegaEmbed('#country_bar_chart', 'js/ao_era_dumbbell_chart.json', { actions: false });
+        vegaEmbed('#country_decade_heatmap', 'js/champ_decade.json', { actions: false });
+        vegaEmbed('#singles_flow_map', 'js/ao_singles_flow_map.json', { actions: false });
+        vegaEmbed('#bump_chart', 'js/ao_bump_chart.json', { actions: false });
+        vegaEmbed('#prize_small_multiples', 'js/ao_prize_small_multiples.json', { actions: false });
+        vegaEmbed('#radial_region_chart', 'js/ao_region_era_radial.json', { actions: false });
+        vegaEmbed('#waffle_chart', 'js/ao_top3_waffle.json', { actions: false });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+country,period,titles,rank
+Australia,Pre-Open,57,1
+United States,Pre-Open,8,2
+Great Britain,Pre-Open,5,3
+France,Pre-Open,1,4
+Switzerland,Pre-Open,0,5
+Serbia,Pre-Open,0,6
+Czech Republic,Pre-Open,0,7
+China,Pre-Open,0,8
+United States,1970s-1980s,13,1
+Australia,1970s-1980s,10,2
+Czech Republic,1970s-1980s,4,3
+Great Britain,1970s-1980s,1,4
+France,1970s-1980s,0,5
+Switzerland,1970s-1980s,0,6
+Serbia,1970s-1980s,0,7
+China,1970s-1980s,0,8
+United States,1990s-2000s,16,1
+Switzerland,1990s-2000s,4,2
+Australia,1990s-2000s,3,3
+Serbia,1990s-2000s,1,4
+China,1990s-2000s,1,5
+Great Britain,1990s-2000s,0,6
+France,1990s-2000s,0,7
+Czech Republic,1990s-2000s,0,8
+Serbia,2010s-2026,8,1
+Switzerland,2010s-2026,6,2
+United States,2010s-2026,5,3
+Australia,2010s-2026,3,4
+China,2010s-2026,1,5
+Great Britain,2010s-2026,1,6
+France,2010s-2026,0,7
+Czech Republic,2010s-2026,0,8

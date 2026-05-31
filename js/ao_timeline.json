@@ -1,0 +1,194 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 560,
+  "height": 430,
+  "background": "#fffdf9",
+  "data": {
+    "values": [
+      {
+        "year": "2026",
+        "title": "Record broken again",
+        "detail": "Main-draw attendance\nreaches 1150444",
+        "y": 55,
+        "x": 135
+      },
+      {
+        "year": "2025",
+        "title": "Attendance record",
+        "detail": "Main-draw attendance\nreaches 1102303",
+        "y": 120,
+        "x": 135
+      },
+      {
+        "year": "1988",
+        "title": "Melbourne Park era begins",
+        "detail": "First tournament at\nthe new venue",
+        "y": 185,
+        "x": 135
+      },
+      {
+        "year": "1972",
+        "title": "Kooyong era begins",
+        "detail": "Kooyong becomes the\ntournament's permanent home",
+        "y": 250,
+        "x": 135
+      },
+      {
+        "year": "1969",
+        "title": "Australian Open name begins",
+        "detail": "Tournament opens to amateurs\nand professionals",
+        "y": 315,
+        "x": 135
+      },
+      {
+        "year": "1905",
+        "title": "Australian Championships begins",
+        "detail": "First men's singles\nchampionship",
+        "y": 380,
+        "x": 135
+      }
+    ]
+  },
+  "layer": [
+    {
+      "data": {
+        "values": [
+          { "x": 135, "y1": 35, "y2": 395 }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 3,
+        "color": "#0f5c4d"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": { "domain": [0, 560] },
+          "axis": null
+        },
+        "y": {
+          "field": "y1",
+          "type": "quantitative",
+          "scale": { "domain": [430, 0] },
+          "axis": null
+        },
+        "y2": { "field": "y2" }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 150,
+        "color": "#fffdf9",
+        "stroke": "#0f5c4d",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": { "domain": [0, 560] },
+          "axis": null
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": { "domain": [430, 0] },
+          "axis": null
+        },
+        "tooltip": [
+          { "field": "year", "type": "nominal" },
+          { "field": "title", "type": "nominal" },
+          { "field": "detail", "type": "nominal" }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -24,
+        "fontSize": 15,
+        "fontWeight": "bold",
+        "color": "#0f5c4d"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": { "domain": [0, 560] },
+          "axis": null
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": { "domain": [430, 0] },
+          "axis": null
+        },
+        "text": { "field": "year" }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "top",
+        "dx": 26,
+        "dy": -11,
+        "fontSize": 14,
+        "fontWeight": "bold",
+        "color": "#1f1d1a"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": { "domain": [0, 560] },
+          "axis": null
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": { "domain": [430, 0] },
+          "axis": null
+        },
+        "text": { "field": "title" }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "top",
+        "dx": 26,
+        "dy": 14,
+        "fontSize": 11.5,
+        "color": "#6f6a63",
+        "lineBreak": "\n"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative",
+          "scale": { "domain": [0, 560] },
+          "axis": null
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative",
+          "scale": { "domain": [430, 0] },
+          "axis": null
+        },
+        "text": { "field": "detail" }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}
