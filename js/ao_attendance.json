@@ -68,7 +68,7 @@
 
     {
       "data": {
-        "url": "../data/ao_attendance.csv"
+        "url": "data/ao_attendance.csv"
       },
       "mark": {
         "type": "area",
@@ -112,7 +112,7 @@
 
     {
       "data": {
-        "url": "../data/ao_attendance.csv"
+        "url": "data/ao_attendance.csv"
       },
       "mark": {
         "type": "line",
@@ -135,7 +135,7 @@
 
     {
       "data": {
-        "url": "../data/ao_attendance.csv"
+        "url": "data/ao_attendance.csv"
       },
       "mark": {
         "type": "point",
